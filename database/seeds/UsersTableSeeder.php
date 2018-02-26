@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
                 'name' => $faker->firstName(),
                 'email' => $faker->email,
                 'password' => bcrypt('secret'),
-                'description' => $faker->text(500),
+                'description' => $faker->text(4000),
                 'avatar' => $fileName,
             ]);
         }

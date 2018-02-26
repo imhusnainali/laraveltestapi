@@ -19,10 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users', 'UsersController@index')->name('users');
-Route::get('/getUserImage/{filename}', [
-    'uses' => 'UsersController@getUserImage',
-    'as' => 'user.avatar',
-]);
 Route::get('detailUser/{id}', [
     'uses' => 'UsersController@detail',
     'as' => 'user.detail',

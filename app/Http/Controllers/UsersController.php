@@ -16,12 +16,6 @@ class UsersController extends Controller
         ]);
     }
 
-    public function getUserImage($filename)
-    {
-        $file = Storage::disk('public')->get($filename);
-        return new Response($file, 200);
-    }
-
     public function detail($id)
     {
         $user = User::findOrfail($id);

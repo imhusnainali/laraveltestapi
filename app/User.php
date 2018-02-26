@@ -20,6 +20,10 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    protected $appends = [
+        'short_description',
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -32,5 +36,10 @@ class User extends Authenticatable
     public function getAvatarAttribute($avatar)
     {
         return \Storage::disk('public')->url($avatar);
+    }
+
+    public function getShortDescriptionAttribute()
+    {
+        return str_limit($this->description, 30);
     }
 }

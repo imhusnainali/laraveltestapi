@@ -8,7 +8,7 @@
             <h1>Email: {{$user->email}}</h1> <br>
             <hr>
             <p>
-                <img src="{{route('user.avatar', ['filename' => $user->avatar])}}"
+                <img src="{{$user->avatar}}"
                      class="img-fluid float-left mr-3 mb-3" alt="Responsive image">
                 {{$user->description}}
             </p>

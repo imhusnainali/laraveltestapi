@@ -8,7 +8,7 @@
         @foreach ($users as $user)
             <div class="col-12 col-md-4 p-3">
                 <div class="card">
-                    <img class="card-img-top" src="{{route('user.avatar', ['filename' => $user->avatar])}}" alt="{{$user->name}}">
+                    <img class="card-img-top" src="{{$user->avatar}}" alt="{{$user->name}}">
                     <div class="card-body">
                         <h5 class="card-title">{{$user->name}}</h5>
                         <p class="card-text">{{str_limit($user->description, 40)}}</p>
