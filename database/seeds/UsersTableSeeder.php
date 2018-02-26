@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
             $file = Storage::disk('public')->put($fileName, File::get($image));
             \DB::table('users')->insert([
                 'name' => $faker->firstName(),
-                'email' => $faker->email,
+                'email' => "test{$i}@test.com",
                 'password' => bcrypt('secret'),
                 'description' => $faker->text(4000),
                 'avatar' => $fileName,
