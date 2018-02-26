@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             $name = "{$faker->firstName}-{$faker->lastName}";
             $fileName = "{$name}.jpg";
             $image = $faker->image(null, 100, 100);
-            Storage::disk('local')->put($fileName, File::get($image));
+            $file = Storage::disk('public')->put($fileName, File::get($image));
             \DB::table('users')->insert([
                 'name' => $faker->firstName(),
                 'email' => $faker->email,

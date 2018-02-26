@@ -18,7 +18,7 @@ class UsersController extends Controller
 
     public function getUserImage($filename)
     {
-        $file = Storage::disk('local')->get($filename);
+        $file = Storage::disk('public')->get($filename);
         return new Response($file, 200);
     }
 
