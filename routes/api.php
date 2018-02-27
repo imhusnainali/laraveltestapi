@@ -29,7 +29,7 @@ Route::group([
          */
         Route::middleware('auth:api', 'throttle:60,1')->group(function () {
             Route::get('/profile', function() {
-                return ['data' => \Auth::user()];
+                return \Auth::user();
             });
             Route::match(['put', 'patch'], '/profile/{id}', function () {
                 return ['wefwefw'];
