@@ -28,7 +28,10 @@ Route::group([
          * AUTH API
          */
         Route::middleware('auth:api', 'throttle:60,1')->group(function () {
-            Route::match(['put', 'patch'], '/users/{id}', function () {
+            Route::get('/profile', function() {
+                return ['data' => \Auth::user()];
+            });
+            Route::match(['put', 'patch'], '/profile/{id}', function () {
                 return ['wefwefw'];
             });
         });

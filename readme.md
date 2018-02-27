@@ -6,6 +6,7 @@
     Edit your .env file
     php artisan key:generate
     php artisan migrate --seed
+    php artisan passport:install
     php artisan storage:link
     yarn 
     yarn prod
