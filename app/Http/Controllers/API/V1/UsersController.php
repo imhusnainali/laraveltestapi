@@ -19,4 +19,24 @@ class UsersController extends Controller
             return $users;
         }
     }
+
+    public function editProfile(Request $request)
+    {
+        $user = \Auth::user();
+        $user->fill($request->all());
+
+        /**
+         * Store image if exists
+         */
+        if ($request->hasFile('avatar')) {
+            $fileName = $user->id . '_' . uniqid() . '.jpg';
+            $request->avatar->storeAs('/', $fileName, 'public');
+            $user->avatar = $fileName;
+        }
+        if ($user->save()) {
+            return response()->json($user, 200);
+        } else {
+            return response()->json(['error' => 'Request error'], 400);
+        }
+    }
 }

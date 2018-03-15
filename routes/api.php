@@ -31,9 +31,7 @@ Route::group([
             Route::get('/profile', function() {
                 return \Auth::user();
             });
-            Route::match(['put', 'patch'], '/profile/{id}', function () {
-                return ['wefwefw'];
-            });
+            Route::match(['put', 'patch'], '/profile/{id}', 'UsersController@editProfile');
         });
     });
 });
