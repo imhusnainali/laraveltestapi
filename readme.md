@@ -1,6 +1,6 @@
 #Install
 
-    git clone git@github.com:bahek2462774/laraveltestapi.git
+    git clone https://github.com/bahek2462774/laraveltestapi.git
     composer install
     cp .env.example .env
 
@@ -26,3 +26,5 @@ test0@test.com/secret
 test1@test.com/secret  
 test2@test.com/secret ...  
 
+Link for POSTMAN Collection
+https://www.getpostman.com/collections/8ee8bcfbf67f889c829e
